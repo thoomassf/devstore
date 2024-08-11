@@ -1,5 +1,11 @@
-export default async function Loading() {
-  await new Promise((resolve) => setTimeout(resolve, 2000))
+import Skeleton from '@/components/skeleton'
 
-  return <h1>Loading...</h1>
+export default async function Loading() {
+  return (
+    <div className="grid h-full grid-cols-9 grid-rows-6 gap-6">
+      <Skeleton className="col-span-6 row-span-6 h-[856px]" />
+      <Skeleton className="col-span-3 row-span-3" />
+      <Skeleton className="col-span-3 row-span-3" />
+    </div>
+  )
 }
